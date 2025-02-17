@@ -1,0 +1,39 @@
+<odoo>
+  <data>
+    <!-- Vista de formulario para el modelo modulo_gemini -->
+    <record id="view_form_modulo_gemini" model="ir.ui.view">
+      <field name="name">modulo.gemini.form</field>
+      <field name="model">modulo_gemini.modulo_gemini</field>
+      <field name="arch" type="xml">
+        <form string="Modulo Gemini">
+          <header>
+            <!-- Botón para ejecutar la API de Gemini -->
+            <button string="Call Gemini API" type="object" name="call_gemini_api"/>
+          </header>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="value"/>
+              <field name="value2"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Acción de ventana para abrir la vista del modelo modulo_gemini -->
+    <record model="ir.actions.act_window" id="modulo_gemini.action_window">
+      <field name="name">Modulo Gemini</field>
+      <field name="res_model">modulo_gemini.modulo_gemini</field>
+      <field name="view_mode">form</field>
+    </record>
+
+    <!-- Menú para acceder a la vista -->
+    <menuitem name="Modulo Gemini" id="modulo_gemini.menu_root"/>
+    <menuitem name="Formulario Modulo Gemini" id="modulo_gemini.menu_form"
+              parent="modulo_gemini.menu_root"
+              action="modulo_gemini.action_window"/>
+  </data>
+</odoo>
+
