@@ -1,0 +1,31 @@
+<odoo>
+    <record id="view_chatbot_form" model="ir.ui.view">
+        <field name="name">huggingface.chatbot.form</field>
+        <field name="model">huggingface.chatbot</field>
+        <field name="arch" type="xml">
+            <form string="Chatbot Hugging Face">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="message"/>
+                        <field name="response" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_chatbot_tree" model="ir.ui.view">
+        <field name="name">huggingface.chatbot.tree</field>
+        <field name="model">huggingface.chatbot</field>
+        <field name="arch" type="xml">
+            <tree string="Chatbot Hugging Face">
+                <field name="name"/>
+                <field name="message"/>
+                <field name="response"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_chatbot" name="Chatbot Hugging Face" parent="base.menu_custom" action="action_chatbot"/>
+</odoo>
