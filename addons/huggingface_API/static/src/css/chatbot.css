@@ -1,0 +1,22 @@
+.chatbot-container {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chat-input {
+    width: 80%;
+    padding: 5px;
+}
+
+.send-btn {
+    padding: 5px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.chat-response {
+    margin-top: 10px;
+    font-weight: bold;
+}
