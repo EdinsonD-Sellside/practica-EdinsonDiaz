@@ -1,4 +1,5 @@
 <odoo>
+    <!-- Vista Formulario -->
     <record id="view_openai_chatbot_form" model="ir.ui.view">
         <field name="name">openai.chatbot.form</field>
         <field name="model">openai.chatbot</field>
@@ -15,6 +16,7 @@
         </field>
     </record>
 
+    <!-- Vista Árbol -->
     <record id="view_openai_chatbot_tree" model="ir.ui.view">
         <field name="name">openai.chatbot.tree</field>
         <field name="model">openai.chatbot</field>
@@ -26,12 +28,14 @@
             </tree>
         </field>
     </record>
-        <record id="action_openai_chatbot" model="ir.actions.act_window">
+
+    <!-- Acción para abrir las vistas -->
+    <record id="action_openai_chatbot" model="ir.actions.act_window">
         <field name="name">Chatbot OpenAI</field>
         <field name="res_model">openai.chatbot</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-
+    <!-- Menú que llama a la acción -->
     <menuitem id="menu_openai_chatbot" name="Chatbot OpenAI" parent="base.menu_custom" action="action_openai_chatbot"/>
 </odoo>
