@@ -1,0 +1,6 @@
+<odoo>
+    <record id="default_openai_chatbot" model="openai.chatbot">
+        <field name="name">Bienvenida</field>
+        <field name="message">Hola, ¿en qué puedo ayudarte?</field>
+    </record>
+</odoo>
