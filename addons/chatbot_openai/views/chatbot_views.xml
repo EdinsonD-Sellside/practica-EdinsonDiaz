@@ -1,0 +1,22 @@
+<odoo>
+    <record id="view_chatbot_openai_form" model="ir.ui.view">
+        <field name="name">chatbot.openai.form</field>
+        <field name="model">chatbot.openai</field>
+        <field name="arch" type="xml">
+            <form string="Chatbot OpenAI">
+                <sheet>
+                    <group>
+                        <field name="user_message"/>
+                        <field name="bot_response" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button string="Enviar consulta" type="object" name="get_bot_response" class="oe_highlight"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="chatbot_openai_menu" name="OpenAI Chatbot" sequence="10" />
+    <menuitem id="chatbot_openai_submenu" name="Chatbot" parent="chatbot_openai_menu" action="action_chatbot_openai" />
+</odoo>
