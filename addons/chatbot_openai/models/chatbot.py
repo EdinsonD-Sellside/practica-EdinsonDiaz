@@ -19,11 +19,11 @@ class ChatbotOpenAI(models.Model):
             return "Error: No se ha encontrado la clave API de OpenAI en los parámetros del sistema."
 
         try:
-            # Crear la instancia de OpenAI con la clave API
-            client = openai.OpenAI(api_key=api_key)
+            # Configurar la clave API globalmente
+            openai.api_key = api_key
 
             # Realizar la llamada a la API de OpenAI
-            response = client.chat.completions.create(
+            response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",  # Puedes cambiar a otro modelo si es necesario
                 messages=[
                     {"role": "system", "content": "Eres un asistente útil."},
@@ -32,7 +32,7 @@ class ChatbotOpenAI(models.Model):
             )
 
             # Retornar la respuesta generada por el modelo
-            return response.choices[0].message.content
+            return response['choices'][0]['message']['content']
 
         except openai.OpenAIError as e:
             return f"Error de OpenAI: {str(e)}"
