@@ -1,5 +1,5 @@
-import openai
 from odoo import models, fields, api
+import openai
 
 class ChatbotOpenAI(models.Model):
     _name = 'chatbot.openai'
@@ -10,20 +10,31 @@ class ChatbotOpenAI(models.Model):
     
     @api.model
     def get_openai_response(self, user_message):
-        # Obtener la API Key desde los parámetros del sistema
+        """Obtiene una respuesta de OpenAI basada en el mensaje del usuario"""
+        
+        # Obtener la clave API de OpenAI desde los parámetros del sistema
         api_key = self.env['ir.config_parameter'].sudo().get_param('openai.api_key')
         
         if not api_key:
-            return "Error: No se encontró la clave API en Odoo."
-
-        openai.api_key = api_key
+            return "Error: No se ha encontrado la clave API de OpenAI en los parámetros del sistema."
 
         try:
-            response = openai.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "system", "content": "Eres un asistente útil."},
-                          {"role": "user", "content": user_message}]
+            # Crear la instancia de OpenAI con la clave API
+            client = openai.OpenAI(api_key=api_key)
+
+            # Realizar la llamada a la API de OpenAI
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",  # Puedes cambiar a otro modelo si es necesario
+                messages=[
+                    {"role": "system", "content": "Eres un asistente útil."},
+                    {"role": "user", "content": user_message}
+                ]
             )
+
+            # Retornar la respuesta generada por el modelo
             return response.choices[0].message.content
+
+        except openai.OpenAIError as e:
+            return f"Error de OpenAI: {str(e)}"
         except Exception as e:
-            return f"Error al conectar con OpenAI: {str(e)}"
+            return f"Error inesperado: {str(e)}"
