@@ -12,7 +12,7 @@ class Chatbot(models.Model):
     @api.model
     def get_response(self, message):
         """Llama a OpenAI para obtener la respuesta del chatbot"""
-        api_key = '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'  # Asegúrate de poner tu API Key aquí
+        api_key = 'ingresar aqui la api'  # Asegúrate de poner tu API Key aquí
         url = "https://api.openai.com/v1/chat/completions"
         headers = {
             "Authorization": f"Bearer {api_key}",
