@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_openai_chatbot_form" model="ir.ui.view">
+        <field name="name">openai.chatbot.form</field>
+        <field name="model">openai.chatbot</field>
+        <field name="arch" type="xml">
+            <form string="Chatbot OpenAI">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="message"/>
+                        <field name="response" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_openai_chatbot_tree" model="ir.ui.view">
+        <field name="name">openai.chatbot.tree</field>
+        <field name="model">openai.chatbot</field>
+        <field name="arch" type="xml">
+            <tree string="Chatbot OpenAI">
+                <field name="name"/>
+                <field name="message"/>
+                <field name="response"/>
+            </tree>
+        </field>
+    </record>
+        <record id="action_openai_chatbot" model="ir.actions.act_window">
+        <field name="name">Chatbot OpenAI</field>
+        <field name="res_model">openai.chatbot</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_openai_chatbot" name="Chatbot OpenAI" parent="base.menu_custom" action="action_openai_chatbot"/>
+</odoo>
