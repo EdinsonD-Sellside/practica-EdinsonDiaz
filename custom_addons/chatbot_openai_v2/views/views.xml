@@ -8,6 +8,7 @@
                 <form>
                     <field name="message"/>
                     <field name="response"/>
+                    <button name="_send_message_button" string="Enviar" type="object"/>
                 </form>
             </field>
         </record>
