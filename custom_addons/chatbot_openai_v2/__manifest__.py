@@ -1,10 +1,12 @@
 {
     'name': 'Chatbot OpenAI',
     'version': '1.0',
-    'description': 'Módulo para integrar OpenAI con Odoo',
+    'description': 'Módulo para integrar la API de OpenAI y crear un chatbot en Odoo.',
+    'author': 'EdinsonD',
     'depends': ['base'],
     'data': [
-        'views/views.xml',
+        'security/ir.model.access.csv',  # Archivos de seguridad
+        'views/views.xml',  # Archivos de vistas
     ],
     'application': True,
     'installable': True,
