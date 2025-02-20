@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="chatbot_conversation_form_view">
+            <field name="name">Conversación Chatbot</field>
+            <field name="model">chatbot.conversation</field>
+            <field name="arch" type="form">
+                <form>
+                    <field name="message"/>
+                    <field name="response"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="chatbot_action">
+            <field name="name">Chatbot</field>
+            <field name="res_model">chatbot.conversation</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="Chatbot" id="chatbot_menu" action="chatbot_action" web_icon="chatbot_openai,static/description/icon.png"/>
+    </data>
+</odoo>
