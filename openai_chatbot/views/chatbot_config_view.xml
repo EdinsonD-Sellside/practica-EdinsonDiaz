@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="view_chatbot_config_form" model="ir.ui.view">
+            <field name="name">Configuración Chatbot</field>
+            <field name="model">chatbot.config</field>
+            <field name="arch" type="form">
+                <sheet>
+                    <group>
+                        <field name="api_key"/>
+                    </group>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="action_chatbot_config" model="ir.actions.act_window">
+            <field name="name">Configuración Chatbot</field>
+            <field name="res_model">chatbot.config</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="menu_chatbot_config" name="Configuración" parent="mail.mail_menu_root" action="action_chatbot_config"/>
+    </data>
+</odoo>
