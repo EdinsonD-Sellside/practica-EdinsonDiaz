@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="ir_config_parameter_openai_api_key" model="ir.config_parameter">
+        <field name="key">openai.api_key</field>
+        <field name="value">YOUR_OPENAI_API_KEY</field>
+    </record>
+</odoo>
