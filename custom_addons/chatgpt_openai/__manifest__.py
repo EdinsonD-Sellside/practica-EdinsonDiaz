@@ -8,4 +8,5 @@
     ],
     'installable': True,
     'application': True,
+    'icon': 'chatgpt_openai/static/description/icon.png',
 }
