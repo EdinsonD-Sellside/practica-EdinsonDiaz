@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="chat_template" name="Chat Template">
+        <div class="o_chat_window">
+            <div class="o_chat_messages">
+                <t t-if="response">
+                    <div class="o_chat_message o_chat_message_received">{{ response }}</div>
+                </t>
+            </div>
+            <div class="o_chat_input">
+                <input type="text" class="o_chat_message"/>
+                <button class="o_send_message">Enviar</button>
+            </div>
+        </div>
+    </template>
+</odoo>
