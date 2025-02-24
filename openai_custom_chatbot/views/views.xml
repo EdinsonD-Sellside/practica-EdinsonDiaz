@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_openai_custom_chatbot_form" model="ir.ui.view">
+        <field name="name">Custom Chatbot OpenAI</field>  <!-- Nombre de la vista -->
+        <field name="model">openai_custom_chatbot.chatbot</field>  <!-- Modelo de la vista -->
+        <field name="arch" type="form">  <!-- Tipo de vista -->
+            <sheet>
+                <group>
+                    <field name="message" widget="text"/>  <!-- Campo para el mensaje -->
+                    <field name="response" widget="text"/>  <!-- Campo para la respuesta -->
+                </group>
+                <footer>
+                    <button name="send_message" string="Enviar" type="object" class="oe_highlight"/>  <!-- Botón para enviar mensaje -->
+                </footer>
+            </sheet>
+        </field>
+    </record>
+
+    <record id="openai_custom_chatbot_action" model="ir.actions.act_window">
+        <field name="name">Custom Chatbot OpenAI</field>  <!-- Nombre de la acción -->
+        <field name="res_model">openai_custom_chatbot.chatbot</field>  <!-- Modelo de la acción -->
+        <field name="view_mode">form</field>  <!-- Modo de vista de la acción -->
+        <field name="target">new</field>  <!-- Abre la vista en una nueva ventana -->
+    </record>
+
+    <menuitem name="Custom Chatbot OpenAI" id="openai_custom_chatbot_menu"
+              parent="YOUR_PARENT_MENU_ID"  <!-- Reemplaza con el ID del menú padre -->
+              action="openai_custom_chatbot_action"/>  <!-- Acción del menú -->
+</odoo>
