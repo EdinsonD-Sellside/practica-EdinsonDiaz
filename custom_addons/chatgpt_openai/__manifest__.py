@@ -1,7 +1,7 @@
 {
-    'name': 'AI Chat',
+    'name': 'chat_openai',
     'version': '1.0',
-    'author': 'Diego',
+    'author': 'Edinson',
     'depends': ['base', 'mail'],
     'data': [
         'data/ai_bot_data.xml',
