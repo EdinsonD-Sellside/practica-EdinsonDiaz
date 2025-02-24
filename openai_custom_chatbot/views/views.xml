@@ -3,16 +3,18 @@
     <record id="view_openai_custom_chatbot_form" model="ir.ui.view">
         <field name="name">Custom Chatbot OpenAI</field>  <!-- Nombre de la vista -->
         <field name="model">openai_custom_chatbot.chatbot</field>  <!-- Modelo de la vista -->
-        <field name="arch" type="form">  <!-- Tipo de vista -->
-            <sheet>
-                <group>
-                    <field name="message" widget="text"/>  <!-- Campo para el mensaje -->
-                    <field name="response" widget="text"/>  <!-- Campo para la respuesta -->
-                </group>
-                <footer>
-                    <button name="send_message" string="Enviar" type="object" class="oe_highlight"/>  <!-- Botón para enviar mensaje -->
-                </footer>
-            </sheet>
+        <field name="arch" type="xml">  <!-- Tipo de vista (Cambiar "form" a "xml") -->
+            <form>  <!-- Cambiar <sheet> a <form> -->
+                <sheet>
+                    <group>
+                        <field name="message" widget="text"/>  <!-- Campo para el mensaje -->
+                        <field name="response" widget="text"/>  <!-- Campo para la respuesta -->
+                    </group>
+                    <footer>
+                        <button name="send_message" string="Enviar" type="object" class="oe_highlight"/>  <!-- Botón para enviar mensaje -->
+                    </footer>
+                </sheet>
+            </form>  <!-- Cerrar etiqueta </form> -->
         </field>
     </record>
 
